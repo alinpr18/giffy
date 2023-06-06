@@ -1,6 +1,6 @@
 'use client'
 
-import { Dispatch, SetStateAction, createContext, useState } from 'react'
+import { Dispatch, SetStateAction, createContext, useEffect, useState } from 'react'
 import { Daum } from '../services/getSearchGifs'
 
 interface MyContextType {
@@ -12,12 +12,12 @@ interface MyContextType {
 export const AppContext = createContext<MyContextType>(null!)
 
 export function AppContextProvider ({ children }: { children: React.ReactNode }): JSX.Element {
-  const [favorites, setFavorites] = useState(() => {
-    const storageItem = localStorage.getItem('favorites')
-    if (storageItem != null) return JSON.parse(storageItem)
+  const [favorites, setFavorites] = useState<Daum[]>([])
 
-    return []
-  })
+  useEffect(() => {
+    const storageItem = localStorage.getItem('favorites')
+    if (storageItem !== null) setFavorites(JSON.parse(storageItem))
+  }, [])
 
   return (
     <AppContext.Provider value={{ favorites, setFavorites }}>

@@ -4,10 +4,10 @@ import { useContext } from 'react'
 import { AppContext } from '../context/Context'
 import Image from 'next/image'
 
-export const Favorites = (): JSX.Element | undefined => {
+export const Favorites = (): JSX.Element => {
   const { favorites } = useContext(AppContext)
 
-  if (favorites?.length === 0) return
+  if (favorites?.length === 0) return <></>
 
   return (
     <section className='grid gap-4'>

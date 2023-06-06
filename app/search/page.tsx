@@ -10,7 +10,7 @@ export default async function SearchPage ({ searchParams }: { searchParams: { q:
         <h2 className='text-2xl text-white'>🔎 {searchParams.q}</h2>
         <div className='grid grid-cols-4 gap-2 grid-rows-[masonry]'>
           {searchGifs.map(gif => (
-            <Image key={gif.id} className='rounded h-[140px]' src={gif.images.original.url} width={gif.images.original.width} height={140} alt={gif.title} />
+            <Image key={gif.id} className='rounded w-full h-[140px]' src={gif.images.original.url} width={140} height={140} alt={gif.title} />
           ))}
         </div>
       </section>
