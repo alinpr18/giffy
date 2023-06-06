@@ -9,7 +9,7 @@ export const TredingGifs = async (): Promise<JSX.Element> => {
       <h2 className='text-2xl text-white'>↗️ Trending</h2>
       <div className='flex gap-2 overflow-auto'>
         {trendingGifs.map(gif => (
-          <Image key={gif.id} className='rounded h-[140px] w-[250px]' src={gif.images.original.url} width={gif.images.original.width} height={140} alt={gif.title} />
+          <Image key={gif.id} className='rounded h-[140px] w-full' src={gif.images.original.url} width={140} height={140} alt={gif.title} />
         ))}
       </div>
     </section>

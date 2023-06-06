@@ -14,7 +14,7 @@ export const Favorites = (): JSX.Element | undefined => {
       <h2 className='text-2xl text-white'>❤️ Favorites</h2>
       <div className='flex gap-2 overflow-auto'>
         {favorites?.map((gif) => (
-          <Image key={gif.id} className='rounded w-fit h-[140px]' src={gif.images.original.url} width={gif.images.original.width} height={140} alt={gif.title} />
+          <Image key={gif.id} className='rounded w-full h-[140px]' src={gif.images.original.url} width={140} height={140} alt={gif.title} />
         ))}
       </div>
     </section>

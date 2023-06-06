@@ -12,7 +12,7 @@ export const RandomGifs = async (): Promise<JSX.Element> => {
         {randomGifs.map((gif) => (
           <div key={gif.id} className='relative'>
             <Button gif={gif} />
-            <Image className='rounded h-[140px]' src={gif.images.original.url} width={gif.images.original.width} height={140} alt={gif.title} />
+            <Image className='rounded w-full h-[140px]' src={gif.images.original.url} width={140} height={140} alt={gif.title} />
           </div>
         ))}
       </div>
