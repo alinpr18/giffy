@@ -2,8 +2,11 @@
 
 import { useContext } from 'react'
 import { AppContext } from '../context/Context'
+import { Daum } from '../services/getSearchGifs'
 
-export const Button = ({ gif }): JSX.Element => {
+interface Props extends Daum {}
+
+export const Button = ({ gif }: { gif: Props }): JSX.Element => {
   const { favorites, setFavorites } = useContext(AppContext)
 
   const handleClick = (): void => {

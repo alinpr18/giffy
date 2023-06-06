@@ -1,8 +1,15 @@
 'use client'
 
-import { createContext, useState } from 'react'
+import { Dispatch, SetStateAction, createContext, useState } from 'react'
+import { Daum } from '../services/getSearchGifs'
 
-export const AppContext = createContext(null)
+interface MyContextType {
+  favorites: Daum[]
+  setFavorites: Dispatch<SetStateAction<Daum[]>>
+}
+
+// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+export const AppContext = createContext<MyContextType>(null!)
 
 export function AppContextProvider ({ children }: { children: React.ReactNode }): JSX.Element {
   const [favorites, setFavorites] = useState(() => {
